@@ -6,6 +6,13 @@
 
 [![Tom](https://img.icons8.com/nolan/25/github.png)](https://github.com/tomal02) Tom
 
+### How To Run
+
+- clone the project `git clone https://github.com/EMDevelop/NotesApp.git`
+- Install single dependency `npm install`
+- Start server `npm start`
+- If you'd like to test run `npm test`
+
 ### User Stories
 
 ```

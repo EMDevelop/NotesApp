@@ -4,7 +4,8 @@
   "description": "[![Ed](https://img.icons8.com/nolan/25/github.png)](https://github.com/EMDevelop) Ed",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./spec/specHelper.js",
+    "run": "http-server"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0"
+  },
+  "dependencies": {
+    "http-server": "^13.0.2"
   }
 }
