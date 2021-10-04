@@ -1,1 +1,1 @@
-console.log('I worked');
+tom();

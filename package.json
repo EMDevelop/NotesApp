@@ -4,7 +4,7 @@
   "description": "[![Ed](https://img.icons8.com/nolan/25/github.png)](https://github.com/EMDevelop) Ed",
   "main": "index.js",
   "scripts": {
-    "test": "node ./spec/specHelper.js",
+    "test": "open ./SpecRunner.html",
     "run": "http-server"
   },
   "repository": {
