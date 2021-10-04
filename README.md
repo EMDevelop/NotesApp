@@ -59,7 +59,7 @@ I want to have categorise my notes in folders
 
 #### Wireframe
 
-[![Wireframe](https://github.com/EMDevelop/public_resources/blob/main/images/notesapp/wireframe.png)]
+![Wireframe](https://github.com/EMDevelop/public_resources/blob/main/images/notesapp/wireframe.png)
 
 #### Domain modelling
 
