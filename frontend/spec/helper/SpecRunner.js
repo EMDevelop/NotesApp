@@ -1,8 +1,12 @@
 class Spec {
   // c = new Spec();
 
+  // beforeEach(beforFunction) {
+  //   beforFunction();
+  // }
+
   expect(method) {
-    console.log(method);
+    // beforFunction();
     if (method instanceof Function) {
       this.input = method();
     } else {

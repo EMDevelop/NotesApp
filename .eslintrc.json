@@ -4,7 +4,7 @@
     "es2021": true
   },
   "extends": "airbnb",
-  "ignorePatterns": ["/spec", "/alternativeTestApproaches"],
+  "ignorePatterns": ["frontend/spec", "/alternativeTestApproaches", "backend"],
 
   "parserOptions": {
     "ecmaVersion": 12
