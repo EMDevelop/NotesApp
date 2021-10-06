@@ -24,6 +24,9 @@ p {
 
 main {
   min-height: 100vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   /* background: linear-gradient(180deg, #1b84f6 0%, rgb(6, 91, 237) 100%); */
   background: var(--c-light-blue);
   background: -webkit-gradient(linear, left top, right bottom, from(var(--c-light-blue)), to(var(--c-mid-blue)));
@@ -37,6 +40,8 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 input[type='text'] {
@@ -49,6 +54,20 @@ input[type='text'] {
   color: var(--text);
   font-size: 20px;
   padding-left: 20px;
+}
+
+textarea {
+  outline: none;
+  border: none;
+  background-color: white;
+  width: 90%;
+  min-height: 60vh;
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 5px;
+  font-family: muli, sans-serif;
 }
 
 input[type='submit'] {
@@ -106,6 +125,7 @@ input[type='submit']:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 20px;
 }
 
 .preview-header {
@@ -125,23 +145,24 @@ input[type='submit']:active {
   padding-right: 10%;
 }
 
-.preview {
+.preview-container {
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+}
+
+.preview {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-items: start;
 }
 
 .note-container {
@@ -228,6 +249,8 @@ input[type='submit']:active {
 }
 
 .note-body {
+  margin-top: 20px;
+  padding-left: 20px;
   -webkit-box-flex: 9;
       -ms-flex: 9;
           flex: 9;
@@ -235,7 +258,7 @@ input[type='submit']:active {
 
 .preview-card {
   width: 80%;
-  height: 80px;
+  height: 110px;
   margin: auto;
   background-color: white;
   border-radius: 5px;
@@ -250,6 +273,8 @@ input[type='submit']:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-item-align: start;
+      align-self: start;
 }
 
 .preview-card .preview-delete-button {

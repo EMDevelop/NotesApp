@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Creating Note Instance
   const notesApp = new NotesApp();
 
@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Updating Screen
 
-  const preview = document.getElementById("preview");
-  const noteTitle = document.getElementById("note-title");
-  const noteBody = document.getElementById("note-body");
+  const preview = document.getElementById('preview');
+  const noteTitle = document.getElementById('note-title');
+  const noteBody = document.getElementById('note-body');
 
   const listNotesOnScreen = () => {
     // Delete existing notes
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = notesApp.getAllNotes();
     result.forEach((currentItem, index) => {
       preview.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `
               <div id="prev${index}" class="preview-card">
                 <div class="preview-title">
@@ -45,29 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   listNotesOnScreen();
 
-  let thing1 = document.querySelectorAll(".preview-card");
-
-  console.log(`thing1: ${thing1}`);
-
-  let thing2 = document.getElementsByClassName("preview-card");
-
-  console.log(`thing2: ${thing1}`);
-
   // Create Event Listners
-  thing = document
-    .getElementsByClassName("preview-card")
-    .addEventListener("click", (e) => {
-      console.log("clicked");
-      console.log(e);
-    });
+  // thing = document
+  //   .getElementsByClassName("preview-card")
+  //   .addEventListener("click", (e) => {
+  //     console.log("clicked");
+  //     console.log(e);
+  //   });
 
   // Multiple
   // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 
   // Create new Empty note
   document
-    .querySelector("#create-empty-new-note")
-    .addEventListener("click", () => {
+    .querySelector('#create-empty-new-note')
+    .addEventListener('click', () => {
       notesApp.newNote();
       listNotesOnScreen();
     });
