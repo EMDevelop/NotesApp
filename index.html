@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/styles/style.css" />
+    <title>Notes App</title>
+  </head>
+  <body>
+    <main>
+      <section class="glass">
+        <div class="notes-preview-container">
+          <div class="preview-header">
+            <input id="create-empty-new-note" type="submit" value="+" />
+          </div>
+          <div id="preview" class="preview">
+            <!-- need to populate dynamically in DOM -->
+          </div>
+        </div>
+        <div class="note-container">
+          <div class="note">
+            <div class="note-header">
+              <div class="note-button">
+                <input id="#save-note" type="submit" value="Save" />
+              </div>
+              <div class="note-title">
+                <!-- need to populate dynamically in DOM -->
+                <input id="note-title" type="text" value="" />
+              </div>
+            </div>
+            <div class="note-body">
+              <!-- need to populate dynamically in DOM -->
+              <textarea class="note-body" id="note-body"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="src/note.js"></script>
+    <script src="src/notesApp.js"></script>
+    <script src="src/interface.js"></script>
+  </body>
+</html>

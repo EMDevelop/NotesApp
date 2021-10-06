@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "open ./SpecRunner.html",
-    "start": "http-server"
+    "start": "http-server ./"
   },
   "repository": {
     "type": "git",
