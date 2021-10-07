@@ -19,7 +19,7 @@ class NotesApp {
   saveNote(title, body, id) {
     this.notes[id].title = title;
     this.notes[id].body = body;
-    this.updateNotes(); // ? Saving note not implemented on UI? This line not running.
+    this.updateNotes();
   }
 
   getAllNotes() {
