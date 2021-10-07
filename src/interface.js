@@ -101,15 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#del').addEventListener('click', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
     notesApp.notes.splice(id, 1);
+    notesApp.updateNotes();
     listNotesOnScreen();
     noteTitle.value = '';
     noteBody.value = '';
-  });
-
-  document.querySelector('#save-note').addEventListener('click', () => {
-    const id = parseInt(document.querySelector('#current-id').innerText);
-    const title = document.querySelector('#note-title').value;
-    const body = document.querySelector('#note-body').value;
   });
 
   document.querySelector('#save-note').addEventListener('click', () => {
