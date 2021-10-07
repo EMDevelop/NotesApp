@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       noteTitle.value = currentItem.title;
       noteBody.value = currentItem.body;
+      document.getElementById('current-id').innerHTML =
+        notesApp.notes.length - 1;
     });
     setPreviewCardEventListeners();
   };
@@ -95,6 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
       notesApp.newNote('Untitled');
       listNotesOnScreen();
     });
+
+  document.querySelector('#del').addEventListener('click', () => {
+    const id = parseInt(document.querySelector('#current-id').innerText);
+    notesApp.notes.splice(id, 1);
+    listNotesOnScreen();
+    noteTitle.value = '';
+    noteBody.value = '';
+  });
 
   document.querySelector('#save-note').addEventListener('click', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
