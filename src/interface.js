@@ -57,9 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
                   <!-- need to populate dynamically in DOM -->
                   <p>${currentItem.title}</p>
                 </div>
-                <div class="preview-delete-button">
-                  <input id="del" type="submit" value="Delete" />
-                </div>
               </div> `
       );
       noteTitle.value = currentItem.title;
@@ -103,7 +100,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
     const title = document.querySelector('#note-title').value;
     const body = document.querySelector('#note-body').value;
+
+    //
+    // fetch('https://makers-emojify.herokuapp.com/', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: `{ "text": ":fire:" }`,
+    // })
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data);
+    //   });
+
     notesApp.saveNote(title, body, id);
     listNotesOnScreen();
   });
 });
+
+//JSON.stringify( // add input text here ),
