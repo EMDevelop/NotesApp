@@ -4448,8 +4448,12 @@ input[type='submit']:active {
 }
 
 .note-datetime {
-  font-size: 15px;
+  font-size: 25px;
   text-align: right;
+  position: absolute;
+  right: 100px;
+  top: 35px;
+  color: grey;
 }
 
 .title {
