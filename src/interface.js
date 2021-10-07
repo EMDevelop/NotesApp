@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       preview.insertAdjacentHTML(
         'beforeend',
         `
-              <div id="prev${index}" class="preview-card">
+              <div id="${index}prev" class="preview-card">
                 <div class="preview-title">
                   <!-- need to populate dynamically in DOM -->
                   <p>${currentItem.title}</p>
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('#create-empty-new-note')
     .addEventListener('click', () => {
-      notesApp.newNote();
+      notesApp.newNote('Untitled');
       listNotesOnScreen();
     });
 });
