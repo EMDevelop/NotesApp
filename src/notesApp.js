@@ -26,6 +26,10 @@ class NotesApp {
     return this.notes;
   }
 
+  getNoteByIndex(index) {
+    return this.notes[index];
+  }
+
   // * Syncs localStorage with notes array, called on save and delete
   updateNotes() {
     localStorage.setItem('notes', JSON.stringify(this.notes));

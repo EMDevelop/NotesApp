@@ -25,15 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Defining the action after clicking for preview cards
-    const previewCardOnClick = (event, id, cardsArray) => {
+    const previewCardOnClick = (id, cardsArray) => {
       // set hidden value with current id
-      document.getElementById('current-id').innerHTML = parseInt(id);
-
-      // -------------------------------------------------
-      // We need to
-      //  use the ID from the getElementById('current-id') to fetch data from notesApp
-      //  Use that data to populate the noteTitle and noteBody
-
+      let intID = parseInt(id);
+      document.getElementById('current-id').innerHTML = intID;
+      let note = notesApp.getNoteByIndex(intID);
+      noteTitle.value = note.title;
+      noteBody.value = note.body;
       previewCardOnClickCss(cardsArray, id);
     };
 
@@ -42,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const cards = document.getElementsByClassName('preview-card');
       const cardsArray = Array.from(cards);
       cardsArray.forEach((card) => {
-        card.addEventListener('click', (e) => {
-          previewCardOnClick(e, card.id, cardsArray);
+        card.addEventListener('click', () => {
+          previewCardOnClick(card.id, cardsArray);
         });
       });
     };
