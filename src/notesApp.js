@@ -1,12 +1,12 @@
 class NotesApp {
   constructor() {
     if (JSON.parse(localStorage.length > 0)) {
-      this.notes = JSON.parse(localStorage.getItem("notes"));
+      this.notes = JSON.parse(localStorage.getItem('notes'));
     } else {
       this.notes = [
         new Note(
-          "Welcome to Eternal Note",
-          "The last notes app you will ever need!"
+          'Welcome to Eternal Note',
+          'The last notes app you will ever need!'
         ),
       ];
     }
@@ -28,6 +28,6 @@ class NotesApp {
 
   // * Syncs localStorage with notes array, called on save and delete
   updateNotes() {
-    localStorage.setItem("notes", JSON.stringify(this.notes));
+    localStorage.setItem('notes', JSON.stringify(this.notes));
   }
 }
