@@ -1,11 +1,15 @@
 class NotesApp {
   constructor() {
-    this.notes = [
-      new Note(
-        "Welcome to Eternal Note",
-        "The last notes app you will ever need!"
-      ),
-    ];
+    if (JSON.parse(localStorage.length > 0)) {
+      this.notes = JSON.parse(localStorage.getItem('notes'));
+    } else {
+      this.notes = [
+        new Note(
+          'Welcome to Eternal Note',
+          'The last notes app you will ever need!'
+        ),
+      ];
+    }
   }
 
   newNote(title, body) {
@@ -15,9 +19,15 @@ class NotesApp {
   saveNote(title, body, id) {
     this.notes[id].title = title;
     this.notes[id].body = body;
+    this.updateNotes();
   }
 
   getAllNotes() {
     return this.notes;
+  }
+
+  // * Syncs localStorage with notes array, called on save and delete
+  updateNotes() {
+    localStorage.setItem('notes', JSON.stringify(this.notes));
   }
 }
