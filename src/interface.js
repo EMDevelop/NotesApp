@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Creating Note Instance
   const notesApp = new NotesApp();
 
-  // Fetching notes
-
   // Updating Screen
 
   const preview = document.getElementById('preview');
@@ -29,7 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Defining the action after clicking for preview cards
     const previewCardOnClick = (event, id, cardsArray) => {
       // set hidden value with current id
-      document.getElementById('current-id').innerHTML = id;
+      document.getElementById('current-id').innerHTML = parseInt(id);
+
+      // -------------------------------------------------
+      // We need to
+      //  use the ID from the getElementById('current-id') to fetch data from notesApp
+      //  Use that data to populate the noteTitle and noteBody
+
       previewCardOnClickCss(cardsArray, id);
     };
 
@@ -56,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <p>${currentItem.title}</p>
                 </div>
                 <div class="preview-delete-button">
-                  <input type="submit" value="Delete" />
+                  <input id="del" type="submit" value="Delete" />
                 </div>
               </div> `
       );
@@ -68,16 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   listNotesOnScreen();
 
-  // Create Event Listners
-  // thing = document
-  //   .getElementsByClassName('preview-card')
-  //   .addEventListener('click', (e) => {
-  //     console.log('clicked');
-  //     console.log(e);
-  //   });
+  // -------------------------------------------------
+  // Save the note
+  // we need to...
+  //  use the getElementByID("save-note")
+  //  set values in our notesApp based on values in the noteBody and noteTitle
 
-  // Multiple
-  // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
+  // -------------------------------------------------
+  // Delete note
+  // I think we need to use .splice or something
+  //  use getElementByID("del")
+  //  we will need to loop through all the del buttons and add an event listner
+
+  // -------------------------------------------------
+  // Setup Emojis
+  // We need to
+  //  Set up a fetch
+  //  The fetch will take the formt of https://makers-emojify.herokuapp.com/
+  //  Maybe setup an OnChange event on the titleBody so every time you type something new it willl send a request to the API haah
+  // We might break the API this way but it will allow instant emoji updates
+  // If not, we can just have the emoji stuff added on save, and the save logic run inside the .then when the promise is fulfilled
 
   // Create new Empty note
   document

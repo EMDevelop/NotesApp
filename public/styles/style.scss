@@ -256,3 +256,10 @@ input[type='submit']:active {
 .current-id {
   display: hidden;
 }
+
+.hide {
+  display: hidden;
+  height: 0px;
+  width: 0px;
+  color: transparent;
+}

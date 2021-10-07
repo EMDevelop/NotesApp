@@ -10,7 +10,9 @@
   <body>
     <main>
       <h1>Eternal Note ∞</h1>
-      <div id="current-id" class="current-id"></div>
+      <div name="0" class="hide">
+        <p class="hide" id="current-id"></p>
+      </div>
       <section class="glass">
         <div class="notes-preview-container">
           <div class="preview-header">
@@ -26,7 +28,7 @@
           <div class="note">
             <div class="note-header">
               <div class="note-button">
-                <input id="#save-note" type="submit" value="Save" />
+                <input id="save-note" type="submit" value="Save" />
               </div>
               <div class="note-title">
                 <!-- need to populate dynamically in DOM -->
