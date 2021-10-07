@@ -110,25 +110,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
     const title = document.querySelector('#note-title').value;
     const body = document.querySelector('#note-body').value;
+  });
 
-    //
-    // fetch('https://makers-emojify.herokuapp.com/', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: `{ "text": ":fire:" }`,
-    // })
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
+  document.querySelector('#save-note').addEventListener('click', () => {
+    const id = parseInt(document.querySelector('#current-id').innerText);
+    const title = document.querySelector('#note-title').value;
+    let body = document.querySelector('#note-body').value;
 
-    notesApp.saveNote(title, body, id);
-    listNotesOnScreen();
+    body = fetch('https://makers-emojify.herokuapp.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: `{ "text": "${body}" }`,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        body = data.emojified_text;
+        console.log(body);
+        notesApp.saveNote(title, body, id);
+        listNotesOnScreen();
+      });
   });
 });
-
-//JSON.stringify( // add input text here ),
