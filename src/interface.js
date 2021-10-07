@@ -100,4 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
       notesApp.newNote('Untitled');
       listNotesOnScreen();
     });
+
+  document.querySelector('#save-note').addEventListener('click', () => {
+    const id = parseInt(document.querySelector('#current-id').innerText);
+    const title = document.querySelector('#note-title').value;
+    const body = document.querySelector('#note-body').value;
+    notesApp.saveNote(title, body, id);
+    listNotesOnScreen();
+  });
 });
