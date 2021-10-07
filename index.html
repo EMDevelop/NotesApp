@@ -25,7 +25,11 @@
             <input id="create-empty-new-note" type="submit" value="+" />
           </div>
           <div class="preview-container">
-            <div id="preview" class="preview">
+            <div
+              id="preview"
+              class="preview"
+              style="overflow-y: scroll; max-height: 90vh"
+            >
               <!-- need to populate dynamically in DOM -->
             </div>
           </div>
@@ -40,6 +44,9 @@
               <div class="note-title">
                 <!-- need to populate dynamically in DOM -->
                 <input id="note-title" type="text" value="" />
+              </div>
+              <div class="note-datetime">
+                <h3 id="note-datetime"></h3>
               </div>
             </div>
             <div class="note-body">

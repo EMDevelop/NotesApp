@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const preview = document.getElementById('preview');
   const noteTitle = document.getElementById('note-title');
   const noteBody = document.getElementById('note-body');
+  const noteDatetime = document.getElementById('note-datetime');
 
   const listNotesOnScreen = () => {
     // Delete existing notes
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let note = notesApp.getNoteByIndex(intID);
       noteTitle.value = note.title;
       noteBody.value = note.body;
+      noteDatetime.innerText = note.dateTime;
       previewCardOnClickCss(cardsArray, id);
     };
 
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       );
       noteTitle.value = currentItem.title;
       noteBody.value = currentItem.body;
+      noteDatetime.innerText = currentItem.dateTime;
       document.getElementById('current-id').innerHTML =
         notesApp.notes.length - 1;
     });
@@ -111,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
     const title = document.querySelector('#note-title').value;
     let body = document.querySelector('#note-body').value;
+    const datetime = document.querySelector('#note-datetime').innerText;
 
     body = fetch('https://makers-emojify.herokuapp.com/', {
       method: 'POST',
