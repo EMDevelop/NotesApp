@@ -288,4 +288,39 @@ input[type='submit']:active {
 .preview-card .preview-delete-button {
   margin-left: 20px;
 }
+
+.preview-card:hover {
+  -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+          box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+}
+
+.preview-card-clicked {
+  width: 80%;
+  height: 110px;
+  margin: auto;
+  background-color: white;
+  border: solid 2px rgba(12, 242, 12, 0.646);
+  border-radius: 5px;
+  padding-left: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+
+.preview-card-clicked .preview-delete-button {
+  margin-left: 20px;
+}
+
+.current-id {
+  display: hidden;
+}
 /*# sourceMappingURL=style.css.map */
