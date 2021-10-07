@@ -125,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(body);
         notesApp.saveNote(title, body, id);
         listNotesOnScreen();
+        let note = notesApp.getNoteByIndex(id);
+        noteTitle.value = note.title;
+        noteBody.value = note.body;
       });
   });
 });
