@@ -1,21 +1,14 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Creating Note Instance
   const notesApp = new NotesApp();
-
-  // Creating a Fake Note
-  // notesApp.newNote(
-  //   "test testy test test test",
-  //   "This is the last notes app you will ever need!"
-  // );
-  // welcome note
 
   // Fetching notes
 
   // Updating Screen
 
-  const preview = document.getElementById("preview");
-  const noteTitle = document.getElementById("note-title");
-  const noteBody = document.getElementById("note-body");
+  const preview = document.getElementById('preview');
+  const noteTitle = document.getElementById('note-title');
+  const noteBody = document.getElementById('note-body');
 
   const listNotesOnScreen = () => {
     // Delete existing notes
@@ -23,10 +16,39 @@ document.addEventListener("DOMContentLoaded", () => {
       preview.removeChild(preview.lastChild);
     }
 
+    const previewCardOnClickCss = (cardsArray, clickedCardID) => {
+      cardsArray.forEach((card) => {
+        if (card.id === clickedCardID) {
+          card.className = 'preview-card-clicked';
+        } else {
+          card.className = 'preview-card';
+        }
+      });
+    };
+
+    // Defining the action after clicking for preview cards
+    const previewCardOnClick = (event, id, cardsArray) => {
+      // set hidden value with current id
+      document.getElementById('current-id').innerHTML = id;
+      previewCardOnClickCss(cardsArray, id);
+    };
+
+    // Defining event listners for each preview
+    const setPreviewCardEventListeners = () => {
+      const cards = document.getElementsByClassName('preview-card');
+      const cardsArray = Array.from(cards);
+      cardsArray.forEach((card) => {
+        card.addEventListener('click', (e) => {
+          previewCardOnClick(e, card.id, cardsArray);
+        });
+      });
+    };
+
+    // Dynamically creating preview cards on screen
     const result = notesApp.getAllNotes();
     result.forEach((currentItem, index) => {
       preview.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `
               <div id="prev${index}" class="preview-card">
                 <div class="preview-title">
@@ -41,33 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
       noteTitle.value = currentItem.title;
       noteBody.value = currentItem.body;
     });
+    setPreviewCardEventListeners();
   };
 
   listNotesOnScreen();
 
-  let thing1 = document.querySelectorAll(".preview-card");
-
-  console.log(`thing1: ${thing1}`);
-
-  let thing2 = document.getElementsByClassName("preview-card");
-
-  console.log(`thing2: ${thing1}`);
-
   // Create Event Listners
-  thing = document
-    .getElementsByClassName("preview-card")
-    .addEventListener("click", (e) => {
-      console.log("clicked");
-      console.log(e);
-    });
+  // thing = document
+  //   .getElementsByClassName('preview-card')
+  //   .addEventListener('click', (e) => {
+  //     console.log('clicked');
+  //     console.log(e);
+  //   });
 
   // Multiple
   // https://flaviocopes.com/how-to-add-event-listener-multiple-elements-javascript/
 
   // Create new Empty note
   document
-    .querySelector("#create-empty-new-note")
-    .addEventListener("click", () => {
+    .querySelector('#create-empty-new-note')
+    .addEventListener('click', () => {
       notesApp.newNote();
       listNotesOnScreen();
     });
