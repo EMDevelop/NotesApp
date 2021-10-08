@@ -479,10 +479,15 @@ input[type='submit']:active {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.8)
+  );
+  border-radius: 5px;
   min-width: 160px;
   overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 5px var(--c-light-blue);
   z-index: 1;
 }
 
@@ -491,6 +496,7 @@ input[type='submit']:active {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-size: 20px;
 }
 
 .dropdown a:hover {
