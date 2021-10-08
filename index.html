@@ -34,8 +34,19 @@
           <div class="note">
             <div class="note-header">
               <div class="note-button">
-                <input id="save-note" type="submit" value="Save" />
-                <input id="del" type="submit" value="Delete" />
+                <div>
+                  <input id="save-note" type="submit" value="Save" />
+                  <input id="del" type="submit" value="Delete" />
+                </div>
+                <div class="font-container">
+                  <button id="drop-button" class="drop-button">Fonts</button>
+                  <div id="fontDropDown" class="dropdown-content">
+                    <a href="#" id="arial-sans-serif">Arial</a>
+                    <a href="#" id="charcoal-sans-serif">Charcoal</a>
+                    <a href="#" id="georgia-serif">Georgia</a>
+                    <a href="#" id="brush-script-cursive">Brush Script</a>
+                  </div>
+                </div>
               </div>
               <div class="note-title">
                 <!-- need to populate dynamically in DOM -->
