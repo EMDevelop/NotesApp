@@ -130,4 +130,87 @@ document.addEventListener('DOMContentLoaded', () => {
         noteBody.value = note.body;
       });
   });
+
+  const openDropdown = () => {
+    document.getElementById('fontDropDown').classList.toggle('show');
+  };
+
+  document.querySelector('#drop-button').addEventListener('click', () => {
+    openDropdown();
+  });
+
+  const closeDropDown = () => {
+    document.getElementById('fontDropDown').classList.remove('show');
+  };
+
+  window.onclick = (event) => {
+    if (!event.target.matches('.drop-button')) {
+      console.log('Funziona!!!');
+      const dropdowns = document.getElementsByClassName('dropdown-content');
+      for (let i = 0; i < dropdowns.length; i++) {
+        const openElementsDropdown = dropdowns[i];
+        if (openElementsDropdown.classList.contains('show')) {
+          openElementsDropdown.classList.remove('show');
+        }
+      }
+    }
+  };
+
+  document.getElementById('arial-sans-serif').addEventListener('click', () => {
+    document.body.style.fontFamily = 'Arial,sans-serif';
+    document.getElementById('note-title').style.fontFamily = 'Arial,sans-serif';
+    document.getElementById('note-body').style.fontFamily = 'Arial,sans-serif';
+    closeDropDown();
+    listNotesOnScreen();
+  });
+
+  document
+    .getElementById('charcoal-sans-serif')
+    .addEventListener('click', () => {
+      document.body.style.fontFamily = 'Impact, Charcoal,sans-serif';
+      document.getElementById('note-title').style.fontFamily =
+        'Impact, Charcoal,sans-serif';
+      document.getElementById('note-body').style.fontFamily =
+        'Impact, Charcoal,sans-serif';
+      closeDropDown();
+      listNotesOnScreen();
+    });
+
+  document.getElementById('georgia-serif').addEventListener('click', () => {
+    document.body.style.fontFamily = 'Georgia, serif';
+    document.getElementById('note-title').style.fontFamily = 'Georgia, serif';
+    document.getElementById('note-body').style.fontFamily = 'Georgia, serif';
+    closeDropDown();
+    listNotesOnScreen();
+  });
+
+  document
+    .getElementById('brush-script-cursive')
+    .addEventListener('click', () => {
+      document.body.style.fontFamily = 'Brush Script MT, cursive';
+      document.getElementById('note-title').style.fontFamily =
+        'Brush Script MT, cursive';
+      document.getElementById('note-body').style.fontFamily =
+        'Brush Script MT, cursive';
+      closeDropDown();
+      listNotesOnScreen();
+    });
+
+  // function changeFont(font) {
+  //   return function () {
+  //     document.body.style.fontFamily = font;
+  //   };
+  // }
+
+  // var arial = changeFont('Arial, sans-serif');
+
+  // const changeFont = (font) => {
+  //   return () => {
+  //     document.body.style.fontFamily = font;
+  //   };
+  // };
+  // const changeFont = () => {
+  //   document.getElementsByClassName('myDropdown');
+  //   console.log('Ciao'); //.classList.toggle('show');
+  // };
 });
