@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('0prev').click();
   });
 
+  document.querySelector('#reload').addEventListener('click', () => {
+    document.cookie = 'font=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    localStorage.clear();
+    window.location.reload(true);
+  });
+
   document.querySelector('#save-note').addEventListener('click', () => {
     const id = parseInt(document.querySelector('#current-id').innerText);
     const title = document.querySelector('#note-title').value;
