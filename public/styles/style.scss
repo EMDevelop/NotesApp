@@ -499,6 +499,11 @@ input[type='submit']:active {
   font-size: 20px;
 }
 
+.dropdown-content a:hover {
+  background: var(--c-mid-blue);
+  color: white !important;
+}
+
 .dropdown a:hover {
   background-color: #ddd;
 }
