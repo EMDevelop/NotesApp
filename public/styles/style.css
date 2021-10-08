@@ -4532,22 +4532,6 @@ input[type='submit']:active {
   color: transparent;
 }
 
-/* .drop-button {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: left;
-    -ms-flex-pack: left;
-    justify-content: left;
-    padding-left: 20px;
-} */
-
 .drop-button {
   outline: none;
   border: none;
