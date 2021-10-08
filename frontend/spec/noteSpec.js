@@ -1,10 +1,23 @@
 /* Note can create a note, with relevant attributes */
-let note = new Note('title', 'body');
+describe('Testing the Note Object', () => {
+  let note = new Note('title', 'body');
 
-test.expect(note).isInstanceOf(Note);
+  it('Check instance is created', () => {
+    expect(note).isInstanceOf(Note);
+  });
+  it('Checks the Title is correctly constructed', () => {
+    expect(note.title).isEq('title');
+  });
 
-test.expect(note.title).isEq('title');
-test.expect(note.title).isNotEq('anotherTitle');
+  it('Checks the Title is correctly constructed', () => {
+    expect(note.title).isNotEq('anotherTitle');
+  });
 
-test.expect(note.body).isEq('body');
-test.expect(note.body).isNotEq('bob');
+  it('Checks the Body is correctly constructed', () => {
+    expect(note.body).isEq('body');
+  });
+
+  it('Checks the Body is correctly constructed', () => {
+    expect(note.body).isNotEq('bob');
+  });
+});

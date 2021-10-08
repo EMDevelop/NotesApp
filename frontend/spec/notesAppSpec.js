@@ -1,24 +1,31 @@
 /* notesApp created with empty notes array */
 
-let noteApp = new NotesApp();
-test.expect(noteApp.notes.length).isEq(0);
+describe('Testing the NotesApp Object', () => {
+  let noteApp = new NotesApp();
 
-/* notesApp creates and stores a new note */
-noteApp.newNote('title', 'body');
-console.log(noteApp);
-test.expect(noteApp.notes.length).isEq(1);
+  it('Checks notes initiated with 1 note', () => {
+    expect(noteApp.notes.length).isEq(0);
+  });
 
-/* notesApp returns a list of notes */
-// Why define again? (Ed)
-let noteApp1 = new NotesApp();
-noteApp1.newNote('title2', 'body2');
-noteApp1.newNote('title3', 'body3');
-test.expect(noteApp1.notes.length).isEq(2);
+  it('notesApp creates and stores a new note', () => {
+    noteApp.newNote('title', 'body');
+    expect(noteApp.notes.length).isEq(1);
+  });
 
-/*  Note values saved correctly */
-let noteApp2 = new NotesApp();
-noteApp2.newNote('title2', 'body2');
-noteApp2.newNote('title3', 'body3');
-result = noteApp2.getAllNotes();
-test.expect(result[0].title).isEq('title2');
-test.expect(result[0].body).isEq('body2');
+  it('notesApp returns a list of notes', () => {
+    let noteApp1 = new NotesApp();
+    noteApp1.newNote('title2', 'body2');
+    noteApp1.newNote('title3', 'body3');
+    expect(noteApp1.notes.length).isEq(2);
+  });
+
+  it('Note values saved correctly', () => {
+    /*  Note values saved correctly */
+    let noteApp2 = new NotesApp();
+    noteApp2.newNote('title2', 'body2');
+    noteApp2.newNote('title3', 'body3');
+    result = noteApp2.getAllNotes();
+    expect(result[0].title).isEq('title2');
+    expect(result[0].body).isEq('body2');
+  });
+});
