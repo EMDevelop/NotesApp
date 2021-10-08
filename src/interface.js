@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document
     .querySelector('#create-empty-new-note')
     .addEventListener('click', () => {
-      notesApp.newNote('Untitled');
+      notesApp.newNote('');
       listNotesOnScreen();
     });
 

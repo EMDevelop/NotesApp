@@ -256,7 +256,7 @@ textarea {
   color: var(--text);
   font-size: 20px;
   padding-left: 20px;
-  padding-top: 5px;
+  padding-top: 20px;
   font-family: muli, sans-serif;
 }
 
@@ -372,6 +372,7 @@ input[type='submit']:active {
 
 .note-title {
   padding-left: 20px;
+  padding-top: 15px;
   flex: 1;
   display: flex;
   align-items: center;
@@ -400,7 +401,7 @@ input[type='submit']:active {
   padding-left: 20px;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   align-self: start;
   .preview-title {
@@ -425,7 +426,7 @@ input[type='submit']:active {
   padding-left: 20px;
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   align-self: start;
 
@@ -510,4 +511,8 @@ input[type='submit']:active {
 
 .show {
   display: block;
+}
+
+::placeholder {
+  color: rgba(128, 128, 128, 0.523);
 }
