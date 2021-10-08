@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.onclick = (event) => {
     if (!event.target.matches('.drop-button')) {
-      console.log('Funziona!!!');
       const dropdowns = document.getElementsByClassName('dropdown-content');
       for (let i = 0; i < dropdowns.length; i++) {
         const openElementsDropdown = dropdowns[i];
@@ -161,7 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('note-title').style.fontFamily = 'Arial,sans-serif';
     document.getElementById('note-body').style.fontFamily = 'Arial,sans-serif';
     closeDropDown();
+    const id = parseInt(document.querySelector('#current-id').innerText);
+
     listNotesOnScreen();
+
+    let note = notesApp.getNoteByIndex(id);
+    noteTitle.value = note.title;
+    noteBody.value = note.body;
   });
 
   document
@@ -173,7 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('note-body').style.fontFamily =
         'Impact, Charcoal,sans-serif';
       closeDropDown();
+      const id = parseInt(document.querySelector('#current-id').innerText);
+
       listNotesOnScreen();
+
+      let note = notesApp.getNoteByIndex(id);
+      noteTitle.value = note.title;
+      noteBody.value = note.body;
     });
 
   document.getElementById('georgia-serif').addEventListener('click', () => {
@@ -181,7 +192,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('note-title').style.fontFamily = 'Georgia, serif';
     document.getElementById('note-body').style.fontFamily = 'Georgia, serif';
     closeDropDown();
+    const id = parseInt(document.querySelector('#current-id').innerText);
+
     listNotesOnScreen();
+
+    let note = notesApp.getNoteByIndex(id);
+    noteTitle.value = note.title;
+    noteBody.value = note.body;
   });
 
   document
@@ -193,24 +210,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('note-body').style.fontFamily =
         'Brush Script MT, cursive';
       closeDropDown();
+      const id = parseInt(document.querySelector('#current-id').innerText);
+
       listNotesOnScreen();
+
+      let note = notesApp.getNoteByIndex(id);
+      noteTitle.value = note.title;
+      noteBody.value = note.body;
     });
-
-  // function changeFont(font) {
-  //   return function () {
-  //     document.body.style.fontFamily = font;
-  //   };
-  // }
-
-  // var arial = changeFont('Arial, sans-serif');
-
-  // const changeFont = (font) => {
-  //   return () => {
-  //     document.body.style.fontFamily = font;
-  //   };
-  // };
-  // const changeFont = () => {
-  //   document.getElementsByClassName('myDropdown');
-  //   console.log('Ciao'); //.classList.toggle('show');
-  // };
 });

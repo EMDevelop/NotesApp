@@ -4431,10 +4431,6 @@ input[type='submit']:active {
   padding-left: 20px;
 }
 
-.font-container {
-  margin-left: 100px;
-}
-
 .note-title {
   padding-left: 20px;
   -webkit-box-flex: 1;
@@ -4530,6 +4526,10 @@ input[type='submit']:active {
   height: 0px;
   width: 0px;
   color: transparent;
+}
+
+.font-container {
+  margin-left: 100px;
 }
 
 .drop-button {

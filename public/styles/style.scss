@@ -444,3 +444,59 @@ input[type='submit']:active {
   width: 0px;
   color: transparent;
 }
+
+.font-container {
+  margin-left: 100px;
+}
+
+.drop-button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: var(--c-light-blue);
+  height: 35px;
+  min-width: 35px;
+  border: solid 1px var(--c-mid-blue);
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.drop-button:hover {
+  background: white;
+  border: solid 3px var(--c-mid-blue);
+  -webkit-transform: translate(0px, -3px);
+  transform: translate(0px, -3px);
+}
+
+.drop-button:active {
+  background: rgba(153, 244, 200, 0.633);
+  -webkit-transition: ease-out;
+  transition: ease-out;
+  height: 33px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: var(--text) !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
