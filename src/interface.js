@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listNotesOnScreen();
     noteTitle.value = '';
     noteBody.value = '';
+    document.getElementById('0prev').click();
   });
 
   document.querySelector('#save-note').addEventListener('click', () => {
