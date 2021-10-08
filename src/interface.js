@@ -9,6 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const noteBody = document.getElementById('note-body');
   const noteDatetime = document.getElementById('note-datetime');
 
+  if (document.cookie != '') {
+    const fontCookie = document.cookie.split('=')[1];
+    document.body.style.fontFamily = fontCookie;
+    document.getElementById('note-title').style.fontFamily = fontCookie;
+    document.getElementById('note-body').style.fontFamily = fontCookie;
+  } else {
+    document.body.style.fontFamily = 'Arial,sans-serif';
+    document.getElementById('note-title').style.fontFamily = 'Arial,sans-serif';
+    document.getElementById('note-body').style.fontFamily = 'Arial,sans-serif';
+  }
+
   const listNotesOnScreen = () => {
     // Delete existing notes
     while (preview.hasChildNodes()) {
@@ -140,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('arial-sans-serif').addEventListener('click', () => {
     document.body.style.fontFamily = 'Arial,sans-serif';
+    document.cookie = 'font=Arial,sans-serif';
     document.getElementById('note-title').style.fontFamily = 'Arial,sans-serif';
     document.getElementById('note-body').style.fontFamily = 'Arial,sans-serif';
     closeDropDown();
@@ -156,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .getElementById('charcoal-sans-serif')
     .addEventListener('click', () => {
       document.body.style.fontFamily = 'Impact, Charcoal,sans-serif';
+      document.cookie = 'font=Impact, Charcoal,sans-serif';
       document.getElementById('note-title').style.fontFamily =
         'Impact, Charcoal,sans-serif';
       document.getElementById('note-body').style.fontFamily =
@@ -172,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('georgia-serif').addEventListener('click', () => {
     document.body.style.fontFamily = 'Georgia, serif';
+    document.cookie = 'font=Georgia, serif';
     document.getElementById('note-title').style.fontFamily = 'Georgia, serif';
     document.getElementById('note-body').style.fontFamily = 'Georgia, serif';
     closeDropDown();
@@ -188,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .getElementById('brush-script-cursive')
     .addEventListener('click', () => {
       document.body.style.fontFamily = 'Brush Script MT, cursive';
+      document.cookie = 'font=Brush Script MT, cursive';
       document.getElementById('note-title').style.fontFamily =
         'Brush Script MT, cursive';
       document.getElementById('note-body').style.fontFamily =
