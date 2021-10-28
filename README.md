@@ -6,7 +6,7 @@
 
 ### The Team
 
-We worked together Really well, helping eachother learn while pushing the boundaries of a single page web app.
+We worked together really well, helping eachother learn while pushing the boundaries of a single page web app.
 
 [![Ed](https://img.icons8.com/nolan/25/github.png)](https://github.com/EMDevelop) Ed | [![Tom](https://img.icons8.com/nolan/25/github.png)](https://github.com/tomal02) Tom | [![Gianluca](https://img.icons8.com/nolan/25/github.png)](https://github.com/GianlucaAnsaldi) Gianluca
 
@@ -17,7 +17,7 @@ We worked together Really well, helping eachother learn while pushing the bounda
 - Fonts were stored using Cookies, in case the page was reloaded / url visited from another browser.
 - Notes are persistent as we stored the notes within local browser storage.
 - CSS implemented a glass theme, built in SCSS and taking advantage of this codepen: https://codepen.io/alexitaylor/pen/RgxJwg
-- Took advantage of an emoji API, which changes :fire: into a fire emoji : https://makers-emojify.herokuapp.com/
+- Took advantage of an emoji API, which changes `:fire:` into a fire emoji : https://makers-emojify.herokuapp.com/
 - Hosted on Heroku
 
 ### How To Run
@@ -93,7 +93,7 @@ This is how we defined the methods which we'd then call to
 
 ![expect](https://github.com/EMDevelop/public_resources/blob/main/images/notesapp/Expect.png 'expect')
 
-##### Matchers:
+##### Matchers
 
 These are the matchers which are returned as an instance when Expect is called.
 
@@ -101,7 +101,7 @@ These are the matchers which are returned as an instance when Expect is called.
 
 ##### Unit Tests
 
-An example of how to use our testing framework
+An example of how to use our testing framework\
 ![unit](https://github.com/EMDevelop/public_resources/blob/main/images/notesapp/WritingTests.png 'unit')
 
 ##### Output
