@@ -1,5 +1,9 @@
 ## Eternal Note
 
+### Preview
+
+![](https://raw.githubusercontent.com/EMDevelop/public_resources/main/gifs/notesApp/notes.gif)
+
 ### The Team
 
 We worked together Really well, helping eachother learn while pushing the boundaries of a single page web app.
